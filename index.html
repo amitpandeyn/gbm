@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>GoBeyondMaps</title>
-    <link rel="manifest" href="manifest.json" />
-    <meta name="description" content="Explore the world with GoBeyondMaps." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-  </head>
-  <body>
-    <script src="flutter.js" defer></script>
-    <script>
-      window.addEventListener('load', function(ev) {
-        _flutter.loader.loadEntrypoint({
-          serviceWorker: {
-            serviceWorkerVersion: null,
-          },
-          onEntrypointLoaded: function(engineInitializer) {
-            engineInitializer.initializeEngine().then(function(appRunner) {
-              appRunner.runApp();
-            });
-          }
-        });
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoBeyondMaps</title>
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth-compat.js"></script>
+  
+  <!-- Google OAuth Config -->
+  <meta name="google-signin-client_id" content="453833925562-vr2dj6jkm6n1d0krispc4hnoekuvhv0s.apps.googleusercontent.com">
+  
+  <!-- GitHub Pages Specific Fix -->
+  <base href="/gbm/"> <!-- Match your repo name -->
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBH58QU1DUTlVBh99zmljEA9DV_EuYxWjI",
+      authDomain: "meghdoot-app.firebaseapp.com",
+      projectId: "meghdoot-app",
+      storageBucket: "meghdoot-app.appspot.com",
+      messagingSenderId: "453833925562",
+      appId: "1:453833925562:web:7525c4eca12946fac17383",
+      measurementId: "G-6DBLW8HRGE"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
 </html>
